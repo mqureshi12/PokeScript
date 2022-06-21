@@ -3,4 +3,7 @@
     <string name="search_pokemon_by_type">Search Pokemon By Type</string>
     <string name="cancel">Cancel</string>
     <string name="name">name</string>
+    <string name="pokescript">PokeScript</string>
+    <string name="filter_pokemon_by_type">Filter Pokemon by type</string>
+    <string name="map_of_pokemon">Map of Pokemon</string>
 </resources>

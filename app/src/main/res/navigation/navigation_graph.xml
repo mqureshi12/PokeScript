@@ -5,7 +5,7 @@
     app:startDestination="@id/listFragment">
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.mohammad.pokescript.ui.fragments.ListFragment"
+        android:name="com.mohammad.pokescript.ui.fragments.PokemonFragment"
         android:label="ListFragment" >
         <action
             android:id="@+id/action_listFragment_to_detailFragment"
