@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parent"
+    android:padding="16dp"
+    android:scrollbars="none"
+    android:background="@color/pokemon_blue">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_card">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailFragmentSaveBTN"
+            android:layout_below="@id/mapView"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/pokemon_card_save_btn"
+            android:textStyle="bold"
+            android:textSize="@dimen/pokemon_title_text_size"
+            android:text="Save Pokemon" />
+
+        <FrameLayout
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:id="@+id/mapView"
+            android:layout_below="@id/detailFragmentMap"
+            android:layout_centerInParent="true"
+            android:background="@drawable/map">
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:id="@+id/mapViewPlot"
+                tools:src="@drawable/placeholder" />
+
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pokemon_image_height"
+            android:id="@+id/detailFragmentIV"
+            android:layout_below="@id/detailFragmentStarContainer"
+            android:background="@drawable/gradient"
+            tools:src="@drawable/placeholder" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/detailFragmentStarContainer"
+            android:orientation="horizontal"
+            android:layout_gravity="end">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/detailFragmentTitleName"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:text="Charmander" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/statsTitleContainer"
+            android:layout_below="@+id/abilitiesContainer"
+            android:padding="10dp"
+            android:weightSum="100"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/detailFragmentTitleStats"
+                android:layout_weight="90"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/pokemon_type_text_size"
+                android:text="Statistics" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/statsContainer"
+            android:layout_below="@+id/statsTitleContainer"
+            android:orientation="vertical"
+            android:padding="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/container"
+            android:layout_below="@+id/detailFragmentIV"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/detailFragmentTitleAbilities"
+                android:layout_below="@+id/recipeTitle"
+                android:layout_weight="90"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/pokemon_type_text_size"
+                android:text="Abilities" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/detailFragmentType"
+                android:layout_weight="10"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/pokemon_type_text_size"
+                tools:text="Type: Fire" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailFragmentMap"
+            android:layout_below="@id/statsContainer"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/detailFragmentMapTitle"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/pokemon_title_text_size"
+                android:text="Last Known Location" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/abilitiesContainer"
+            android:padding="10dp"
+            android:layout_below="@+id/container"
+            android:orientation="vertical" />
+
+    </RelativeLayout>
+
+</ScrollView>
