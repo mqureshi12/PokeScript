@@ -6,4 +6,5 @@
     <string name="pokescript">PokeScript</string>
     <string name="filter_pokemon_by_type">Filter Pokemon by type</string>
     <string name="map_of_pokemon">Map of Pokemon</string>
+    <string name="image_of_a_pokemon">Image of a pokemon</string>
 </resources>

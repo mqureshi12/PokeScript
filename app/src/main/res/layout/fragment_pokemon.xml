@@ -6,39 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/pokemon_blue">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/pokemonFragmentFilter"
-        app:layout_constraintTop_toTopOf="@id/pokemonFragmentSearch"
-        app:layout_constraintBottom_toBottomOf="@id/pokemonFragmentSearch"
-        app:layout_constraintLeft_toRightOf="@id/pokemonFragmentSearch"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_filter"
-        android:contentDescription="@string/filter_pokemon_by_type" />
-
-    <LinearLayout
-        android:layout_width="0px"
-        android:layout_height="0px"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        tools:ignore="UselessLeaf" />
-
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/pokemonFragmentProgress"
-        app:layout_constraintTop_toTopOf="@+id/pokemonFragmentRefresh"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="10dp"
-        android:elevation="2dp"
-        android:indeterminateDrawable="@drawable/progress"
-        android:visibility="invisible"
-        tools:visibility="visible" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,6 +19,39 @@
         android:textColor="@color/pokemon_yellow"
         android:textSize="@dimen/pokemon_title_text_size"
         android:text="@string/pokescript" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pokemonFragmentFilter"
+        app:layout_constraintTop_toTopOf="@id/pokemonFragmentSearch"
+        app:layout_constraintBottom_toBottomOf="@id/pokemonFragmentSearch"
+        app:layout_constraintLeft_toRightOf="@id/pokemonFragmentSearch"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_filter"
+        android:contentDescription="@string/filter_pokemon_by_type" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pokemonFragmentProgress"
+        app:layout_constraintTop_toTopOf="@+id/pokemonFragmentRefresh"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:elevation="2dp"
+        android:indeterminateDrawable="@drawable/progress"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="0px"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:ignore="UselessLeaf" />
 
     <androidx.appcompat.widget.SearchView
         android:layout_width="0dp"

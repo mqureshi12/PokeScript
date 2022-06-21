@@ -32,7 +32,8 @@
                 android:layout_marginBottom="8dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"
-                tools:src="@drawable/placeholder" />
+                tools:src="@drawable/placeholder"
+                android:contentDescription="@string/image_of_a_pokemon" />
 
             <TextView
                 android:layout_width="0dp"
