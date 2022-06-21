@@ -5,7 +5,7 @@
     app:startDestination="@id/listFragment">
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.mohammad.pokescript.ui.fragments.PokemonFragment"
+        android:name="com.mohammad.pokescript.fragments.PokemonFragment"
         android:label="ListFragment" >
         <action
             android:id="@+id/action_listFragment_to_detailFragment"
@@ -19,11 +19,11 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.mohammad.pokescript.ui.fragments.DetailFragment"
+        android:name="com.mohammad.pokescript.fragments.DetailFragment"
         android:label="DetailFragment" />
     <fragment
         android:id="@+id/savedViewFragment"
-        android:name="com.mohammad.pokescript.ui.fragments.SavedViewFragment"
+        android:name="com.mohammad.pokescript.fragments.SavedViewFragment"
         android:label="SavedViewFragment" >
         <action
             android:id="@+id/action_savedViewFragment_to_detailFragment"
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/mapViewFragment"
-        android:name="com.mohammad.pokescript.ui.fragments.MapViewFragment"
+        android:name="com.mohammad.pokescript.fragments.MapViewFragment"
         android:label="MapViewFragment" >
         <action
             android:id="@+id/action_mapViewFragment_to_detailFragment"
