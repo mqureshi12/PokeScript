@@ -48,9 +48,9 @@
         app:layout_constraintRight_toRightOf="parent"
         android:padding="@dimen/padding"
         android:fontFamily="@font/pokemon"
-        android:textSize="@dimen/pokemon_title_text_size"
         android:textStyle="bold"
         android:textColor="@color/pokemon_yellow"
+        android:textSize="@dimen/pokemon_title_text_size"
         android:text="@string/pokescript" />
 
     <androidx.appcompat.widget.SearchView
@@ -63,7 +63,7 @@
         app:layout_constraintRight_toLeftOf="@id/pokemonFragmentFilter"
         android:layout_margin="16dp"
         android:imeOptions="flagNoExtractUi"
-        android:queryHint="Pikachu"
+        android:queryHint="Charmander"
         android:clickable="true"
         android:focusable="true"
         app:iconifiedByDefault="false" />

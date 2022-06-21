@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/drawable/rounded_card.xml" value="0.2685" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.259375" />
         <entry key="app/src/main/res/layout/fragment_pokemon.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/pokemon_item.xml" value="0.3776041666666667" />
       </map>
     </option>
   </component>
