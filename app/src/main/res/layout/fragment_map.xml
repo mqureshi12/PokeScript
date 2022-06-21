@@ -18,17 +18,19 @@
         app:layout_constraintTop_toBottomOf="@+id/mapFragmentTV">
     </FrameLayout>
 
-    <ProgressBar
+    <TextView
+        android:id="@+id/mapFragmentTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/mapFragmentProgress"
-        app:layout_constraintTop_toBottomOf="@+id/mapFragmentTV"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp"
-        android:visibility="invisible"
-        tools:visibility="visible"
-        android:indeterminateDrawable="@drawable/progress"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:padding="@dimen/padding"
+        android:fontFamily="@font/pokemon"
+        android:textColor="@color/pokemon_yellow"
+        android:textSize="@dimen/pokemon_fragment_title_size"
+        android:textStyle="bold"
+        android:text="@string/world_map" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,21 +44,19 @@
         android:textColor="@color/pokemon_yellow"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:text="Map shows the last know location of Pokemon"/>
+        android:text="@string/map_shows_the_last_know_location_of_pokemon" />
 
-    <TextView
-        android:id="@+id/mapFragmentTitle"
+    <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:padding="@dimen/padding"
-        android:fontFamily="@font/pokemon"
-        android:textColor="@color/pokemon_yellow"
-        android:textSize="@dimen/pokemon_fragment_title_size"
-        android:textStyle="bold"
-        android:text="World Map"/>
+        android:id="@+id/mapFragmentProgress"
+        app:layout_constraintTop_toBottomOf="@+id/mapFragmentTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        android:indeterminateDrawable="@drawable/progress" />
 
     <ImageView
         android:layout_width="30dp"
@@ -66,6 +66,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/mapFragmentTitle"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="8dp"
-        app:srcCompat="@drawable/ic_forward" />
+        app:srcCompat="@drawable/ic_forward"
+        android:contentDescription="@string/go_back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,4 +7,10 @@
     <string name="filter_pokemon_by_type">Filter Pokemon by type</string>
     <string name="map_of_pokemon">Map of Pokemon</string>
     <string name="image_of_a_pokemon">Image of a pokemon</string>
+    <string name="go_back">Go back</string>
+    <string name="settings_for_pokemon">Settings for pokemon</string>
+    <string name="saved_pokemon">Saved Pokemon</string>
+    <string name="your_saved_pokemon_will_be_here_in_your_party">Your saved Pokemon will be here... in your party!</string>
+    <string name="world_map">World Map</string>
+    <string name="map_shows_the_last_know_location_of_pokemon">Map shows the last know location of Pokemon</string>
 </resources>

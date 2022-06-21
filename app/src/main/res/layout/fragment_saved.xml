@@ -7,6 +7,17 @@
     android:background="@color/pokemon_blue">
 
     <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/savedFragment_back"
+        app:layout_constraintTop_toTopOf="@+id/SavedFragmentTitle"
+        app:layout_constraintBottom_toBottomOf="@+id/SavedFragmentTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="15dp"
+        app:srcCompat="@drawable/ic_back"
+        android:contentDescription="@string/go_back" />
+
+    <ImageView
         android:id="@+id/pokemonFragmentSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,7 +25,22 @@
         app:layout_constraintBottom_toBottomOf="@+id/SavedFragmentTitle"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_margin="16dp"
-        app:srcCompat="@drawable/ic_settings" />
+        app:srcCompat="@drawable/ic_settings"
+        android:contentDescription="@string/settings_for_pokemon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SavedFragmentTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:padding="@dimen/padding"
+        android:fontFamily="@font/pokemon"
+        android:textColor="@color/pokemon_yellow"
+        android:textSize="@dimen/pokemon_fragment_title_size"
+        android:textStyle="bold"
+        android:text="@string/saved_pokemon" />
 
     <ProgressBar
         android:layout_width="wrap_content"
@@ -33,20 +59,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/SavedFragmentTitle"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:padding="@dimen/padding"
-        android:fontFamily="@font/pokemon"
-        android:textColor="@color/pokemon_yellow"
-        android:textSize="@dimen/pokemon_fragment_title_size"
-        android:textStyle="bold"
-        android:text="Saved Pokemon" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/savedFragmentPlaceholder"
         app:layout_constraintTop_toBottomOf="@+id/SavedFragmentTitle"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +68,7 @@
         android:textColor="@color/pokemon_yellow"
         android:textSize="@dimen/pokemon_title_text_size"
         android:textStyle="bold"
-        android:text="Your saved Pokemon will appear here..."/>
+        android:text="@string/your_saved_pokemon_will_be_here_in_your_party" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/savedFragmentRV"
@@ -71,15 +83,5 @@
         android:padding="@dimen/padding"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/pokemon_saved_item" />
-
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:id="@+id/savedFragment_back"
-        app:layout_constraintTop_toTopOf="@+id/SavedFragmentTitle"
-        app:layout_constraintBottom_toBottomOf="@+id/SavedFragmentTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="15dp"
-        app:srcCompat="@drawable/ic_back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
