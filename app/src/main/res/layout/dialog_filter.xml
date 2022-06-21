@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/pokemon_card_color_dark">
+
+    <GridLayout
+        android:layout_width="361dp"
+        android:layout_height="457dp"
+        android:id="@+id/filterDialog"
+        app:layout_constraintTop_toBottomOf="@id/messageDialogTitle"
+        app:layout_constraintBottom_toTopOf="@+id/DialogCancel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:columnCount="4"
+        android:rowCount="5">
+
+        <ImageView
+            android:id="@+id/grass"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/grass" />
+
+        <ImageView
+            android:id="@+id/fire"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/fire" />
+
+        <ImageView
+            android:id="@+id/water"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/water" />
+
+        <ImageView
+            android:id="@+id/bug"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/bug" />
+
+        <ImageView
+            android:id="@+id/dark"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/dark" />
+
+        <ImageView
+            android:id="@+id/dragon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/dragon" />
+
+        <ImageView
+            android:id="@+id/electric"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/electric" />
+
+        <ImageView
+            android:id="@+id/fairy"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/fairy" />
+
+        <ImageView
+            android:id="@+id/fighting"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/fighting" />
+
+        <ImageView
+            android:id="@+id/flying"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/flying" />
+
+        <ImageView
+            android:id="@+id/ghost"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ghost" />
+
+        <ImageView
+            android:id="@+id/ground"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ground" />
+
+        <ImageView
+            android:id="@+id/ice"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ice" />
+
+        <ImageView
+            android:id="@+id/normal"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/normal" />
+
+        <ImageView
+            android:id="@+id/poison"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/poison" />
+
+        <ImageView
+            android:id="@+id/psychic"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/psychic" />
+
+        <ImageView
+            android:id="@+id/rock"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:layout_margin="5dp"
+            android:src="@drawable/rock" />
+
+        <ImageView
+            android:id="@+id/steel"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_row="4"
+            android:layout_column="2"
+            android:layout_margin="5dp"
+            android:src="@drawable/steel" />
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/DialogCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/pokemon_card_save_btn"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/messageDialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        android:padding="6dp"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/pokemon_title_text_size"
+        android:text="@string/search_pokemon_by_type"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
