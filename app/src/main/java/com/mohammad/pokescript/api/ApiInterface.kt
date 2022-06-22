@@ -1,5 +1,6 @@
 package com.mohammad.pokescript.api
 
+import com.mohammad.pokescript.models.PokemonDetailItem
 import retrofit2.Response
 import retrofit2.http.Path
 
