@@ -7,6 +7,7 @@
     tools:context=".activities.MainActivity"
     android:id="@+id/container">
 
+    <!-- Fragments container. Main hub for the app, will handle navigation -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
