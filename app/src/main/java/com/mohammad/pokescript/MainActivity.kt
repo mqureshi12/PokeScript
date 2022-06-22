@@ -1,8 +1,7 @@
-package com.mohammad.pokescript.activities
+package com.mohammad.pokescript
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.mohammad.pokescript.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
