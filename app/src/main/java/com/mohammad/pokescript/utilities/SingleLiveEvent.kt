@@ -23,7 +23,6 @@ import java.util.concurrent.atomic.AtomicBoolean
  *  limitations under the License.
  */
 
-
 // I'll use in view models most likely
 // If I have an event to show a toast message for, I'll use a single live event; only triggered once
 // Example: Orientation change?
