@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt' // Useful to track if there are unused annotation processors
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize' // Provides a Parcelable implementation generator
 }
 
 android {

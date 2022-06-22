@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 import com.google.gson.reflect.TypeToken
 
 // Room DB table and data class for detail response
-// Make Pokemon name unique to stop duplicate items
+// Make pokemon name unique to stop duplicate items
 // If I get pokemon with the same name, I'll replace it with the new value
 @Entity(tableName = "pokemonDetails", indices = (arrayOf(Index(value = arrayOf("name"), unique = true))))
 
