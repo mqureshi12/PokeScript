@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if (!isNetworkConnected()) {
-            Toast.makeText(this, "No internet access if detected!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "No internet access is detected!", Toast.LENGTH_LONG).show()
         }
     }
 
