@@ -14,16 +14,11 @@ import javax.inject.Inject
 class MapViewModel @Inject constructor(private val repository: MainRepository) : ViewModel() {
 
     private val _pokemonList = MutableLiveData<Resource<List<CustomPokemonListItem>>>()
-    // Getter. Value accessible from the ui
     val pokemonList: LiveData<Resource<List<CustomPokemonListItem>>>
         get() = _pokemonList
 
     fun getPokemonList() {
         _pokemonList.postValue(Resource.Loading(""))
-        // All the work called in this block will be bound to the
-        // lifecycle of the view model
-        // Once the view model dies, the work and process with it
-        // will also die
         viewModelScope.launch(Dispatchers.IO) {
             _pokemonList.postValue(repository.getPokemonList())
         }
