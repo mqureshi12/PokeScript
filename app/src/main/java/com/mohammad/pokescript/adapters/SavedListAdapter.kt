@@ -50,7 +50,7 @@ class SavedListAdapter() : RecyclerView.Adapter<SavedListAdapter.PokemonViewHold
         fun onClick(item: CustomPokemonListItem)
     }
 
-    fun setOnClickListener(onClickListener: View.OnClickListener) {
+    fun setOnClickListener(onClickListener: OnClickListener) {
         this.onClickListner = onClickListner
     }
 
