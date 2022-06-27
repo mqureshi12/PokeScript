@@ -8,14 +8,14 @@
 
 ## Overview
 ### Description
-PokeScript is an Android app that allows users to search through a list of Pokemon (creatures from the popular gaming and film / TV franchise of the same name) and view their statistics, class rating, abilities, type and location.
+PokeScript is an Android app that allows users to search through a list of Pokemon (creatures from the popular gaming and film / TV franchise of the same name) and view their statistics, class rating, abilities, type and location. It also allows users to save Pokemon into their personal party to mimic their in-game roster.
 
 To go beyond CodePath and increase complexity, I have learned and utilized advanced topics, processes, and technologies like Kotlin, the MVVM architecture style, dependency injection, coroutines, pagination and more. I have also used utilized layout types not used in the course curriculum and developed some xml files on my own as well as a custom app icon.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
 - **Category:** Entertainment / Gaming / Informational
-- **Mobile:** This app would be engineered for mobile as Pokemon games are primarily developed for small movable devices allowing for users to easily have an information bank alongside their handheld gaming device. Incorporating the Augmented Reality stretch goal would require the application to be mobile as it would utilize the phone camera.
+- **Mobile:** This app would be engineered for mobile as Pokemon games are primarily developed for small movable devices allowing for users to easily have an information bank alongside their handheld gaming device.
 - **Story:** Gamers and Pokemon fans are given a chance to improve their knowledge in the area and gain access to useful in-game Pokemon information quickly, in a fun way. As the app fetches Pokemon from the API, it can also be used to quickly see new Pokemon announced when a new game is releasing assuming the API is updated with information in a timely manner.
 - **Market:** Users include gamers and Pokemon fans who need to get quick information while playing a Pokemon game or planning out their party. Other applications for this exists, but many are bloated with too much information or views and are designed poorly without the user or UI/UX in mind.
 - **Habit:** They may use this app many days in a row, for short bursts, perhaps weeks at time while playing a game, followed by a pause.
