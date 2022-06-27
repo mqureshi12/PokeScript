@@ -1,39 +1,41 @@
 package com.mohammad.pokescript.utilities
 
+import android.content.Context
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.target.Target.SIZE_ORIGINAL
+import com.bumptech.glide.request.target.Target
 import com.mohammad.pokescript.R
+import android.view.ViewGroup.MarginLayoutParams
 
 object Image {
 
-    fun loadImage(imageView: ImageView, url: String) {
-        Glide.with(imageView.context)
+    fun loadImage(context: Context, ImageView: ImageView, url: String) {
+        Glide.with(context)
             .load(url)
-            .override(SIZE_ORIGINAL, SIZE_ORIGINAL) // Override width and height
+            .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
             .placeholder(R.drawable.placeholder)
             .error(R.drawable.placeholder)
-            .diskCacheStrategy(DiskCacheStrategy.RESOURCE) // Cache resource for placeholder
-            .into(imageView)
+            .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+            .into(ImageView);
     }
 
-    fun loadImageDrawable(imageView: ImageView, drawable: Int) {
-        Glide.with(imageView.context)
+    fun loadImageDrawable(context: Context, ImageView: ImageView, drawable: Int) {
+        Glide.with(context)
             .load(drawable)
-            .override(SIZE_ORIGINAL, SIZE_ORIGINAL) // Override width and height
+            .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
             .placeholder(R.drawable.placeholder)
             .error(R.drawable.placeholder)
-            .diskCacheStrategy(DiskCacheStrategy.RESOURCE) // Cache resource for placeholder
-            .into(imageView)
+            .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+            .into(ImageView);
     }
 
+    // Set custom position using margins for map view
     fun setMargins(view: View, left: Int, top: Int) {
-        if(view.layoutParams is ViewGroup.MarginLayoutParams) {
-            val layoutParams = view.layoutParams as ViewGroup.MarginLayoutParams
-            layoutParams.setMargins(left, top, 0, 0);
+        if (view.layoutParams is MarginLayoutParams) {
+            val p = view.layoutParams as MarginLayoutParams
+            p.setMargins(left, top, 0, 0)
             view.requestLayout()
         }
     }

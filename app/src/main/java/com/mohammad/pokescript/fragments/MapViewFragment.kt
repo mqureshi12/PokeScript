@@ -1,6 +1,7 @@
 package com.mohammad.pokescript.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.RelativeLayout
@@ -17,6 +18,8 @@ import com.mohammad.pokescript.utilities.Image
 import com.mohammad.pokescript.utilities.Resource
 import com.mohammad.pokescript.viewmodels.MapViewModel
 import dagger.hilt.android.AndroidEntryPoint
+
+private const val TAG = "MapViewFragment"
 
 @AndroidEntryPoint
 class MapViewFragment : Fragment(R.layout.fragment_map) {
@@ -56,33 +59,40 @@ class MapViewFragment : Fragment(R.layout.fragment_map) {
     private fun initObserver() {
         // Observe pokemon list
         viewModel.pokemonList.observe(viewLifecycleOwner, Observer { list ->
-            // Switch statement to switch my cases such as success or error
-            when(list) {
+            when (list) {
                 is Resource.Success -> {
-                    showProgress(false)
-                    // Check if list is empty or null
-                    if(list.data?.isNotEmpty() == true) {
-                        list.data.forEach { pokemon ->
-                            // For each pokemon in the list, make an iv
-                            val img = ImageView(requireContext())
-                            val lp = RelativeLayout.LayoutParams(200, 200)
-                            img.layoutParams = lp
-                            pokemon.Image?.let { Image.loadImage(img, it) }
-                            // Positions of the image
-                            pokemon.positionLeft?.let { left ->
-                                pokemon.positionTop?.let { top ->
-                                    Image.setMargins(img, left, top)
+                    if (list.data != null) {
+                        if (list.data.isNotEmpty()) {
+                            Log.d(TAG, list.data.toString())
+                            showProgress(false)
+                            for (i in list.data) {
+                                Log.d(TAG, i.name)
+                                val img = ImageView(requireContext())
+                                val lp = RelativeLayout.LayoutParams(200, 200) //make the image a bit bigger in this fragment
+                                img.layoutParams = lp
+                                // Setup last location plot
+                                i.Image?.let { it1 -> Image.loadImage(requireContext(), img, it1) }
+                                // Setup random position
+                                i.positionLeft?.let { left ->
+                                    i.positionTop?.let { right ->
+                                        Image.setMargins(img, left, right)
+                                    }
                                 }
+                                // Add img to map
+                                binding.mapFragmentImgLayout.addView(img)
                             }
-                            binding.mapFragmentImgLayout.addView(img)
+                        } else {
+                            // Setup empty recyclerview
+                            showProgress(false)
+                            Toast.makeText(requireContext(), "No Pokemon found", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
                 is Resource.Error -> {
+                    Log.d(TAG, list.message.toString())
                     showProgress(false)
                     Toast.makeText(requireContext(), "No Pokemon found", Toast.LENGTH_SHORT).show()
                 }
-                is Resource.Expired -> {}
                 is Resource.Loading -> {
                     showProgress(true)
                 }

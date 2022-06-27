@@ -27,8 +27,7 @@ class PokemonListAdapter() : RecyclerView.Adapter<PokemonListAdapter.PokemonView
             }
 
             // Set up image
-            item.Image?.let { Image.loadImage(binding.rowCardIV, it)}
-        }
+            item.Image?.let { Image.loadImage(itemView.context, binding.rowCardIV, it) }        }
 
         companion object {
             fun inflateLayout(parent: ViewGroup): PokemonViewHolder {
