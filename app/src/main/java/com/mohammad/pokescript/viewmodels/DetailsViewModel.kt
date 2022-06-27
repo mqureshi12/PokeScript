@@ -23,10 +23,10 @@ class DetailsViewModel @Inject constructor(private val repository: MainRepositor
     val plotLeft = (0..600).random()
     val plotTop = (0..600).random()
 
-    fun getPokemonDetails(id: String) {
+    fun getPokemonDetails(id: Int) {
         _pokemonDetails.postValue(Resource.Loading(""))
         viewModelScope.launch(Dispatchers.IO) {
-            _pokemonDetails.postValue(repository.getPokemonDetails(id.toInt()))
+            _pokemonDetails.postValue(repository.getPokemonDetails(id))
         }
     }
 

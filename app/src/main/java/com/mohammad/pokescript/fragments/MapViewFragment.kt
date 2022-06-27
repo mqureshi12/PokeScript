@@ -28,7 +28,7 @@ class MapViewFragment : Fragment(R.layout.fragment_map) {
     to avoid null checks when referencing the property inside the body of a class.
     To handle such cases, you can mark the property with the lateinit modifier (kotlinlang.org).
     */
-    private lateinit var binding: FragmentMapBinding
+    lateinit var binding: FragmentMapBinding
     private val viewModel: MapViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

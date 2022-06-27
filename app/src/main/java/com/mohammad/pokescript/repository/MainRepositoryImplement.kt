@@ -51,7 +51,7 @@ class MainRepositoryImplement @Inject constructor (
 
             // Insert list to DB
             pokeDB.insertPokemonList(preSeedList)
-            return Resource.Success(pokeDB.getPokemon())
+            return Resource.Success(preSeedList)
         }
     }
 

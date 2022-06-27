@@ -19,11 +19,11 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.mohammad.pokescript.fragments.DetailFragment"
+        android:name="com.mohammad.pokescript.fragments.DetailsFragment"
         android:label="DetailFragment" />
     <fragment
         android:id="@+id/savedViewFragment"
-        android:name="com.mohammad.pokescript.fragments.SavedViewFragment"
+        android:name="com.mohammad.pokescript.fragments.SavedListFragment"
         android:label="SavedViewFragment" >
         <action
             android:id="@+id/action_savedViewFragment_to_detailFragment"
