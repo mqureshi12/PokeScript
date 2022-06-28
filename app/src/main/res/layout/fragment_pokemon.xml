@@ -44,15 +44,6 @@
         android:visibility="invisible"
         tools:visibility="visible" />
 
-    <LinearLayout
-        android:layout_width="0px"
-        android:layout_height="0px"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        tools:ignore="UselessLeaf" />
-
     <androidx.appcompat.widget.SearchView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
