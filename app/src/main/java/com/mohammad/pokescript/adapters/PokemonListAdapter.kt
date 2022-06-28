@@ -11,7 +11,7 @@ import java.util.*
 
 class PokemonListAdapter() : RecyclerView.Adapter<PokemonListAdapter.PokemonViewHolder>() {
 
-    private var onClickListner : OnClickListener? = null
+    private var onClickListener : OnClickListener? = null
     private var pokemonList = mutableListOf<CustomPokemonListItem>()
 
     class PokemonViewHolder(private val binding: PokemonItemBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -46,18 +46,15 @@ class PokemonListAdapter() : RecyclerView.Adapter<PokemonListAdapter.PokemonView
     }
 
     fun setOnClickListener(onClickListener: OnClickListener) {
-        this.onClickListner = onClickListner
+        this.onClickListener = onClickListener
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): PokemonListAdapter.PokemonViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {
         return PokemonViewHolder.inflateLayout(parent)
     }
 
-    override fun onBindViewHolder(holder: PokemonListAdapter.PokemonViewHolder, position: Int) {
-        holder.bind(pokemonList[position], onClickListner)
+    override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
+        holder.bind(pokemonList[position], onClickListener)
     }
 
     override fun getItemCount(): Int {
