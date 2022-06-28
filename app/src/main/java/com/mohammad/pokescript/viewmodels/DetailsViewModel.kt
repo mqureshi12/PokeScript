@@ -1,6 +1,7 @@
 package com.mohammad.pokescript.viewmodels
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mohammad.pokescript.models.CustomPokemonListItem
@@ -20,6 +21,10 @@ class DetailsViewModel @Inject constructor(private val repository: MainRepositor
     val pokemonDetails: LiveData<Resource<PokemonDetailItem>>
         get() = _pokemonDetails
 
+    private val _pokemonSaveIntent = MutableLiveData<Boolean>()
+    val pokemonSaveIntent: LiveData<Boolean>
+        get() = _pokemonSaveIntent
+
     // Values for plotting on the map
     // When saving the pokemon, add these values
     val plotLeft = (0..600).random()
@@ -33,6 +38,7 @@ class DetailsViewModel @Inject constructor(private val repository: MainRepositor
     }
 
     fun savePokemon(customPokemonListItem: CustomPokemonListItem) {
+        _pokemonSaveIntent.postValue(true)
         viewModelScope.launch(Dispatchers.IO) {
             repository.savePokemon(customPokemonListItem)
         }

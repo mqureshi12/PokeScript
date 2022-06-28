@@ -36,7 +36,7 @@ object AppModule {
 
     @Provides
     fun providePokemonDAO(@ApplicationContext applicationContext: Context) : PokemonDao {
-        return PokemonDB.getDB(applicationContext)!!.pokemonDAO()
+        return PokemonDB.getDB(applicationContext).pokemonDAO()
     }
 
     // Main repository

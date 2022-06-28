@@ -13,7 +13,7 @@ class MainRepositoryImplement @Inject constructor (
 
     // Access to api and db
     private val pokeApi: ApiInterface,
-    private val pokeDB: PokemonDao
+    private val pokeDao: PokemonDao
 
 ) : MainRepository {
 
@@ -21,7 +21,7 @@ class MainRepositoryImplement @Inject constructor (
     private val fiveAgo = System.currentTimeMillis() - Constants.CACHE
 
     override suspend fun getPokemonList(): Resource<List<CustomPokemonListItem>> {
-        val responseFromDB = pokeDB.getPokemon()
+        val responseFromDB = pokeDao.getPokemon()
 
         if(responseFromDB.isNotEmpty()) {
             return Resource.Success(responseFromDB)
@@ -55,9 +55,9 @@ class MainRepositoryImplement @Inject constructor (
                 }
             }
             // Insert into DB
-            pokeDB.insertPokemonList(preSeedList)
+            pokeDao.insertPokemonList(preSeedList)
             // Read from DB
-            val initialDBRead = pokeDB.getPokemon()
+            val initialDBRead = pokeDao.getPokemon()
             // Return from DB
             return Resource.Success(initialDBRead)
         }
@@ -65,9 +65,9 @@ class MainRepositoryImplement @Inject constructor (
 
     override suspend fun getPokemonListNext(): Resource<List<CustomPokemonListItem>> {
         // Get id of last pokemon in local DB
-        val lastStored = getLastStored()
+        val lastStoredPokemonObject = getLastStored()
         // Check API for details on next pokemon
-        val nextPokemonID = lastStored.apiId + 1
+        val nextPokemonID = lastStoredPokemonObject.apiId + 1
         val pokemonList = mutableListOf<CustomPokemonListItem>()
 
         // Get next 10 pokemon
@@ -96,17 +96,14 @@ class MainRepositoryImplement @Inject constructor (
                 else -> return Resource.Error("Unable to retrieve next items")
             }
         }
+        pokeDao.insertPokemonList(pokemonList)
 
-        // Insert list into DB
-        if (pokemonList.isNotEmpty()){
-            pokeDB.insertPokemonList(pokemonList)
-        }
-        return Resource.Success(pokeDB.getPokemon())
+        return Resource.Success(pokemonList)
     }
 
     override suspend fun getPokemonDetails(id: Int): Resource<PokemonDetailItem> {
         // First check DB for results
-        val dbResult = pokeDB.getPokemonDetails(id)
+        val dbResult = pokeDao.getPokemonDetails(id)
         // Check if I have that pokemon in the DB
         if(dbResult != null) {
             // Is cache is valid, I'll return from the db
@@ -122,12 +119,12 @@ class MainRepositoryImplement @Inject constructor (
     }
 
     override suspend fun getLastStored(): CustomPokemonListItem {
-        return pokeDB.getLastStoredPokemonObject()
+        return pokeDao.getLastStoredPokemonObject()
     }
 
     override suspend fun getSavedPokemon(): Resource<List<CustomPokemonListItem>> {
-        val dbResult = pokeDB.getSavedPokemon()
-        return if (dbResult.isNullOrEmpty()){
+        val dbResult = pokeDao.getSavedPokemon()
+        return if (dbResult.isNullOrEmpty()) {
             Resource.Error("Saved pokemon list is empty")
         } else {
             Resource.Success(dbResult)
@@ -135,7 +132,7 @@ class MainRepositoryImplement @Inject constructor (
     }
 
     override suspend fun savePokemon(pokemonListItem: CustomPokemonListItem) {
-        pokeDB.insertPokemon(pokemonListItem)
+        pokeDao.insertPokemon(pokemonListItem)
     }
 
     // Suspend because I'm accessing the api
@@ -148,9 +145,9 @@ class MainRepositoryImplement @Inject constructor (
                     val newPokemon = apiResult.body()
                     newPokemon!!.timestamp = System.currentTimeMillis().toString()
                     // Store results in DB
-                    pokeDB.insertPokemonDetailsItem(newPokemon)
+                    pokeDao.insertPokemonDetailsItem(newPokemon)
                     // Retrieve results from DB
-                    val newDBRead = pokeDB.getPokemonDetails(id)
+                    val newDBRead = pokeDao.getPokemonDetails(id)
                     // Return from DB
                     return Resource.Success(newDBRead!!)
                 } else if (dbResult != null) {
