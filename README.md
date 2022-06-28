@@ -27,29 +27,29 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 
 **Required Must-have Stories**
 
-* [ ] User can scroll through a list of Pokemon from the Pokemon API
-* [ ] Users can search for a specific Pokemon by name
+* [X] User can scroll through a list of Pokemon from the Pokemon API
+* [X] Users can search for a specific Pokemon by name
 * [ ] User can click on a Pokemon in the list view to see more details
   * [ ] Statistics, class rating (calculated by getting the average of all statistics), abilities, type, and location
-* [ ] User can access a game-based map from the main view with Pokemon plotted onto certain, different parts of the map 
+* [X] User can access a game-based map from the main view with Pokemon plotted onto certain, different parts of the map 
 * [ ] User can sign up with a new profile
 * [ ] User can log in / log out of the app
 * [ ] User can save / delete Pokemon to and from their party with the information stored
-* [ ] The app has multiple views
+* [X] The app has multiple views
 * [ ] The app uses at least one gesture (e.g. double tap to like, e.g. pinch to scale) 
 * [ ] The app incorporates at least one external library to add visual polish
 * [ ] The app uses at least one animation (e.g. fade in / out, e.g. animating a view growing and shrinking)
 
 **Optional Nice-to-have Stories**
 
-* [ ] User can filter Pokemon by type
+* [X] User can filter Pokemon by type
 * [ ] The app periodically searches the Pokemon API in the background to find new Pokemon and add them to the internal database even while the app is not open
-* [ ] Allow background API search to be turned off via in-app settings
-* [ ] User can pull down to refresh the list of Pokemon gathered from the API
+* [ ] Different audio plays when navigating to certain fragments
+* [X] User can pull down to refresh the list of Pokemon gathered from the API
 * [ ] Sign up and log in can be done with a Google OR Facebook account
-* [ ] Display a default placeholder graphic for each image during loading
-* [ ] Apply the View Binding library to reduce view boilerplate
-* [ ] Show progress bar loading icon when loading in key areas throughout the app
+* [X] Display a default placeholder graphic for each image during loading
+* [X] Apply the View Binding library to reduce view boilerplate
+* [X] Show progress bar loading icon when loading in key areas throughout the app
 * [ ] Implement ARCore to give the option to cast a special 3D model for the original three starter Pokemon when in a user's party
 
 ### 2. Screen Archetypes
