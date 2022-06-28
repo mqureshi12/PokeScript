@@ -21,13 +21,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MapViewFragment : Fragment(R.layout.fragment_map) {
 
-    /*
-    Normally, properties declared as having a non-null type must be initialized in the constructor.
-    However, it is often the case that doing so is not convenient. For example, properties can be initialized through dependency injection,
-    or in the setup method of a unit test. In these cases, you cannot supply a non-null initializer in the constructor, but you still want
-    to avoid null checks when referencing the property inside the body of a class.
-    To handle such cases, you can mark the property with the lateinit modifier (kotlinlang.org).
-    */
     lateinit var binding: FragmentMapBinding
     private val viewModel: MapViewModel by viewModels()
 

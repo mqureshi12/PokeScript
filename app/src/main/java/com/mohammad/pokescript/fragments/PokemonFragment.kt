@@ -22,7 +22,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.FilterListener {
 
-    private var shouldPaginate = true // Boolean value for pagination
+    private var shouldPaginate = true
     private lateinit var pokemonListAdapter: PokemonListAdapter
     private var pokemonList = mutableListOf<CustomPokemonListItem>()
     private lateinit var binding: FragmentPokemonBinding

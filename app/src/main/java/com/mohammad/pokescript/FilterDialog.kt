@@ -45,7 +45,6 @@ class FilterDialog(var filterListener: FilterListener) : DialogFragment() {
 
         val cancelBtn = rootview.findViewById<Button>(R.id.DialogCancel)
 
-        // Type click listeners
         fireImage.setOnClickListener {
             filterListener.typeToSearch("fire")
             this.dismiss()

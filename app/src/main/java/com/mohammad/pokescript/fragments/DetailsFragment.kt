@@ -35,9 +35,11 @@ class DetailsFragment : Fragment(R.layout.fragment_detail) {
                 pokemon = mPokemon
                 pokemon.type?.let { type -> setType(type) }
                 binding.detailFragmentTitleName.text = pokemon.name.replaceFirstChar { char ->
-                    if (char.isLowerCase()) char.titlecase(
-                        Locale.getDefault()
-                    ) else char.toString()
+                    if (char.isLowerCase()) {
+                        char.titlecase(Locale.getDefault())
+                    } else {
+                        char.toString()
+                    }
                 }
 
                 getPokemonDetails(pokemon.apiId)
@@ -62,9 +64,11 @@ class DetailsFragment : Fragment(R.layout.fragment_detail) {
 
     private fun setType(type: String) {
         binding.detailFragmentType.text = "Type : ${type.replaceFirstChar {
-            if (it.isLowerCase()) it.titlecase(
-                Locale.getDefault()
-            ) else it.toString()
+            if (it.isLowerCase()) {
+                it.titlecase(Locale.getDefault())
+            } else {
+                it.toString()
+            }
         }}"
     }
 
