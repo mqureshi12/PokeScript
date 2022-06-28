@@ -7,10 +7,12 @@ import androidx.lifecycle.viewModelScope
 import com.mohammad.pokescript.models.CustomPokemonListItem
 import com.mohammad.pokescript.repository.MainRepository
 import com.mohammad.pokescript.utilities.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class SavedViewModel @Inject constructor(private val repository: MainRepository) : ViewModel() {
 
     private val _pokemonList = MutableLiveData<Resource<List<CustomPokemonListItem>>>()
