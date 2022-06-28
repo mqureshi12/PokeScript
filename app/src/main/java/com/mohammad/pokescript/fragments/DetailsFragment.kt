@@ -100,7 +100,7 @@ class DetailsFragment : Fragment(R.layout.fragment_detail) {
 
     private fun setupView(pokemonDetails: PokemonDetailItem) {
         pokemonDetails.sprites.otherSprites.artwork.front_default?.let {
-            Image.loadImage(binding.detailFragmentIV, it)
+            Image.loadImage(requireContext(), binding.detailFragmentIV, it)
         }
 
         for(i in pokemonDetails.abilities) {
@@ -154,7 +154,7 @@ class DetailsFragment : Fragment(R.layout.fragment_detail) {
         }
 
         pokemon.Image?.let {
-            Image.loadImage(binding.mapViewPlot, it)
+            Image.loadImage(requireContext(), binding.mapViewPlot, it)
         }
         Image.setMargins(
             binding.mapViewPlot,
@@ -167,7 +167,7 @@ class DetailsFragment : Fragment(R.layout.fragment_detail) {
         val img = ImageView(requireContext())
         val lp = LinearLayout.LayoutParams(dp, dp)
         img.layoutParams = lp
-        Image.loadImageDrawable(img, R.drawable.star)
+        Image.loadImageDrawable(requireContext(), img, R.drawable.star)
         binding.detailFragmentStarContainer.addView(img)
     }
 }

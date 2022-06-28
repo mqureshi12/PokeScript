@@ -67,7 +67,7 @@ class MapViewFragment : Fragment(R.layout.fragment_map) {
                             val img = ImageView(requireContext())
                             val lp = RelativeLayout.LayoutParams(200, 200)
                             img.layoutParams = lp
-                            pokemon.Image?.let { Image.loadImage(img, it) }
+                            pokemon.Image?.let { Image.loadImage(requireContext(), img, it) }
                             // Positions of the image
                             pokemon.positionLeft?.let { left ->
                                 pokemon.positionTop?.let { top ->

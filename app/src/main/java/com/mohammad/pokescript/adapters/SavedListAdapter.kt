@@ -28,7 +28,7 @@ class SavedListAdapter() : RecyclerView.Adapter<SavedListAdapter.PokemonViewHold
             }
 
             // Set up image
-            item.Image?.let { Image.loadImage(binding.rowCardIV, it)}
+            item.Image?.let { Image.loadImage(itemView.context, binding.rowCardIV, it)}
 
             binding.pokemonDelete.setOnClickListener {
                 onDeleteListener?.onDelete(item, position)

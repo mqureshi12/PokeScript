@@ -7,5 +7,4 @@ import dagger.hilt.android.HiltAndroidApp
 // First class to run in the app
 
 @HiltAndroidApp
-class HiltAndroidApp : Application() {
-}
+class HiltAndroidApp : Application()

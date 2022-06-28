@@ -122,27 +122,33 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
 
     private fun initObserver() {
         viewModel.pokemonList.observe(viewLifecycleOwner, Observer { list ->
-            when(list) {
+            when (list) {
                 is Resource.Success -> {
-                    if(list.data?.isNotEmpty() == true) {
-                        pokemonList = list.data as ArrayList<CustomPokemonListItem>
-                        pokemonListAdapter.updatingList(list.data)
-                        pokemonListAdapter.notifyDataSetChanged()
-                        showProgressBar(false)
-
-                        if(binding.pokemonFragmentRefresh.isRefreshing) {
-                            binding.pokemonFragmentRefresh.isRefreshing = false
+                    if (list.data != null) {
+                        if (list.data.isNotEmpty()) {
+                            pokemonList = list.data as ArrayList<CustomPokemonListItem>
+                            pokemonListAdapter.updatingList(list.data)
+                            pokemonListAdapter.notifyDataSetChanged()
+                            showProgressBar(false)
+                            // Swipe to refresh layout is used then lets stop the refresh animation here
+                            if (binding.pokemonFragmentRefresh.isRefreshing) {
+                                binding.pokemonFragmentRefresh.isRefreshing = false
+                            }
                         } else {
+                            // Setup empty RV
                             showProgressBar(false)
                             showEmptyRecyclerViewError()
                         }
+                    } else {
+                        showEmptyRecyclerViewError()
                     }
                 }
                 is Resource.Error -> {
                     showProgressBar(false)
+                    // Setup empty RV
                     showEmptyRecyclerViewError()
+
                 }
-                is Resource.Expired -> {}
                 is Resource.Loading -> {
                     showProgressBar(true)
                 }

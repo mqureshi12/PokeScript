@@ -29,8 +29,8 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 
 * [X] User can scroll through a list of Pokemon from the Pokemon API
 * [X] Users can search for a specific Pokemon by name
-* [ ] User can click on a Pokemon in the list view to see more details
-  * [ ] Statistics, class rating (calculated by getting the average of all statistics), abilities, type, and location
+* [X] User can click on a Pokemon in the list view to see more details
+  * [X] Statistics, class rating (calculated by getting the average of all statistics), abilities, type, and location
 * [X] User can access a game-based map from the main view with Pokemon plotted onto certain, different parts of the map 
 * [ ] User can sign up with a new profile
 * [ ] User can log in / log out of the app
@@ -45,6 +45,7 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 * [X] User can filter Pokemon by type
 * [ ] The app periodically searches the Pokemon API in the background to find new Pokemon and add them to the internal database even while the app is not open
 * [ ] Different audio plays when navigating to certain fragments
+* [X] The app checks for needed device internet connectivity
 * [X] User can pull down to refresh the list of Pokemon gathered from the API
 * [ ] Sign up and log in can be done with a Google OR Facebook account
 * [X] Display a default placeholder graphic for each image during loading
