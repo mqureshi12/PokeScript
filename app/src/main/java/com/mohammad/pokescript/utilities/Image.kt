@@ -21,14 +21,14 @@ object Image {
             .into(ImageView);
     }
 
-    fun loadImageDrawable(context: Context, ImageView: ImageView, drawable: Int) {
+    fun loadImageDrawable(context: Context, imageView: ImageView, drawable: Int) {
         Glide.with(context)
             .load(drawable)
             .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
             .placeholder(R.drawable.placeholder)
             .error(R.drawable.placeholder)
             .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
-            .into(ImageView);
+            .into(imageView);
     }
 
     // Set custom position using margins for map view
