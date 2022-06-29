@@ -19,7 +19,7 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 - **Story:** Gamers and Pokemon fans are given a chance to improve their knowledge in the area and gain access to useful in-game Pokemon information quickly, in a fun way. As the app fetches Pokemon from the API, it can also be used to quickly see new Pokemon announced when a new game is releasing assuming the API is updated with information in a timely manner.
 - **Market:** Users include gamers and Pokemon fans who need to get quick information while playing a Pokemon game or planning out their party. Other applications for this exists, but many are bloated with too much information or views and are designed poorly without the user or UI/UX in mind.
 - **Habit:** They may use this app many days in a row, for short bursts, perhaps weeks at time while playing a game, followed by a pause.
-- **Scope:** A functioning app will be manageable to complete. Challenges may arise when attempting to implement the planned periodic background searches to the API while the app is not open and 3rd party sign on. If all stories and other stretch goals are met, the most difficult final story would be to implement the Augmented Reality stretch goal, strongly increasing the scope of the project. Utilizing new topics, technologies and processes like Kotlin, MVVM, dependency injection, coroutines, and pagination will also increase the complexity and difficulty in reaching the app plans.
+- **Scope:** A functioning app will be manageable to complete. Challenges may arise when attempting to implement the planned periodic background searches to the API while the app is not open and 3rd party sign on. If all stories and other stretch goals are met, the most difficult final story would be to implement the Augmented Reality stretch goal, strongly increasing the scope of the project. Utilizing new topics, technologies and processes like Kotlin, MVVM, dependency injection, and coroutines will also increase the complexity and difficulty in reaching the app plans.
 
 ## Product Spec
 
@@ -43,11 +43,11 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 **Optional Nice-to-have Stories**
 
 * [X] User can filter Pokemon by type
-* [ ] The app periodically searches the Pokemon API in the background to find new Pokemon and add them to the internal database even while the app is not open
+* [X] The app periodically searches the Pokemon API in the background to find new Pokemon and add them to the internal database even while the app is not open
 * [ ] Different audio plays when navigating to certain fragments
 * [X] The app checks for needed device internet connectivity
 * [X] User can pull down to refresh the list of Pokemon gathered from the API
-* [ ] Sign up and log in can be done with a Google OR Facebook account
+* [ ] Sign up and log in can be done with a Facebook account
 * [X] Display a default placeholder graphic for each image during loading
 * [X] Apply the View Binding library to reduce view boilerplate
 * [X] Show progress bar loading icon when loading in key areas throughout the app
