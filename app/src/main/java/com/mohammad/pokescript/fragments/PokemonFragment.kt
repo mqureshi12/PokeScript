@@ -36,6 +36,7 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
         setupSearchView()
         setupFABs()
         initObserver()
+        Toast.makeText(requireContext(), "Sign in success!", Toast.LENGTH_SHORT).show()
     }
 
     private fun setupFABs() {
