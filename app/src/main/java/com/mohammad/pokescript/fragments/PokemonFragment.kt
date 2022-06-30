@@ -144,29 +144,18 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
                                 binding.pokemonFragmentRefresh.isRefreshing = false
                             }
                         } else {
-                            // Setup empty RV
                             showProgressBar(false)
-                            showEmptyRecyclerViewError()
                         }
-                    } else {
-                        showEmptyRecyclerViewError()
                     }
                 }
                 is Resource.Error -> {
                     showProgressBar(false)
-                    // Setup empty RV
-                    showEmptyRecyclerViewError()
-
                 }
                 is Resource.Loading -> {
                     showProgressBar(true)
                 }
             }
         })
-    }
-
-    private fun showEmptyRecyclerViewError() {
-        Toast.makeText(requireContext(), "No items found", Toast.LENGTH_SHORT).show()
     }
 
     private fun showProgressBar(isVisible: Boolean) {

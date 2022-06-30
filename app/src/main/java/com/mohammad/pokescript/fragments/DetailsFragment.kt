@@ -52,7 +52,6 @@ class DetailsFragment : Fragment(R.layout.fragment_detail) {
                     binding.detailFragmentSaveBTN.setOnClickListener {
                         pokemon.isSaved = "true"
                         viewModel.savePokemon(pokemon)
-                        Toast.makeText(requireContext(), "Pokemon has been saved to your party", Toast.LENGTH_SHORT).show()
                         binding.detailFragmentSaveBTN.text = "Saved"
                     }
                 } else {
