@@ -13,7 +13,7 @@
     <string name="your_saved_pokemon_will_be_here_in_your_party">Your saved Pokemon will be here... in your party!</string>
     <string name="world_map">World Map</string>
     <string name="map_shows_the_last_know_location_of_pokemon">Map shows the last know location of Pokemon</string>
-    <string name="facebook_app_id">1234</string>
-    <string name="fb_login_protocol_scheme">fb1234</string>
-    <string name="facebook_client_token">56789</string>
+    <string name="facebook_app_id">772769827416292</string>
+    <string name="fb_login_protocol_scheme">fb772769827416292</string>
+    <string name="facebook_client_token">1311c8ece74b13c94a81c26ba0722b91</string>
 </resources>
