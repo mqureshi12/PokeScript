@@ -27,6 +27,7 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
     private var pokemonList = mutableListOf<CustomPokemonListItem>()
     private lateinit var binding: FragmentPokemonBinding
     private val viewModel: PokemonViewModel by viewModels()
+    private var start = true
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,7 +37,11 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
         setupSearchView()
         setupFABs()
         initObserver()
-        Toast.makeText(requireContext(), "Sign in success!", Toast.LENGTH_SHORT).show()
+
+        if(start) {
+            Toast.makeText(requireContext(), "Sign in success!", Toast.LENGTH_SHORT).show()
+            start = false
+        }
     }
 
     private fun setupFABs() {
