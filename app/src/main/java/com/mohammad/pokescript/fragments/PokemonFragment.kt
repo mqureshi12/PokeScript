@@ -46,6 +46,9 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
         binding.pokemonFragmentSavedFAB.setOnClickListener {
             findNavController().navigate(R.id.action_listFragment_to_savedViewFragment)
         }
+        binding.logoutButton.setOnClickListener {
+            findNavController().navigate(R.id.action_listFragment_to_authFragment)
+        }
     }
 
     private fun setupRV() {
