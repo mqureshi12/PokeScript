@@ -32,8 +32,8 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 * [X] User can click on a Pokemon in the list view to see more details
   * [X] Statistics, class rating (calculated by getting the average of all statistics), abilities, type, and location
 * [X] User can access a game-based map from the main view with Pokemon plotted onto certain, different parts of the map 
-* [ ] User can sign up with a new profile
-* [ ] User can log in / log out of the app
+* [X] User can sign up with a new profile
+* [X] User can log in / log out of the app
 * [X] User can save / delete Pokemon to and from their party with the information stored
 * [X] The app has multiple views
 * [ ] The app uses at least one gesture (e.g. double tap to like, e.g. pinch to scale) 
@@ -47,11 +47,10 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 * [ ] Different audio plays when navigating to certain fragments
 * [X] The app checks for needed device internet connectivity
 * [X] User can pull down to refresh the list of Pokemon gathered from the API
-* [ ] Sign up and log in can be done with a Facebook account
+* [X] Sign up and log in can be done with a Facebook account
 * [X] Display a default placeholder graphic for each image during loading
 * [X] Apply the View Binding library to reduce view boilerplate
 * [X] Show progress bar loading icon when loading in key areas throughout the app
-* [ ] Implement ARCore to give the option to cast a special 3D model for the original three starter Pokemon when in a user's party
 
 ### 2. Screen Archetypes
 
