@@ -44,6 +44,7 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 
 * [X] User can filter Pokemon by type
 * [X] The app periodically searches the Pokemon API in the background to find new Pokemon and add them to the internal database even while the app is not open
+* [X] User can enable / disable the background api search in the app
 * [ ] Different audio plays when navigating to certain fragments
 * [X] The app checks for needed device internet connectivity
 * [X] User can pull down to refresh the list of Pokemon gathered from the API
