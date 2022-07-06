@@ -26,6 +26,7 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
             binding.loginButton.registerCallback(callbackManager, object  :FacebookCallback<LoginResult> {
                 override fun onSuccess(result: LoginResult) {
                     findNavController().navigate(R.id.action_authFragment_to_listFragment)
+                    Toast.makeText(requireContext(), "Sign in success!", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onCancel() {
