@@ -31,7 +31,11 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.mohammad.pokescript.fragments.DetailsFragment"
-        android:label="DetailFragment" />
+        android:label="DetailFragment">
+        <action
+            android:id="@+id/action_detailFragment_to_mapViewFragment"
+            app:destination="@id/mapViewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/savedViewFragment"
         android:name="com.mohammad.pokescript.fragments.SavedListFragment"

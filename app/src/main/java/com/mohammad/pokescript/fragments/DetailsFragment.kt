@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.ddd.androidutils.DoubleClick
+import com.ddd.androidutils.DoubleClickListener
 import com.mohammad.pokescript.R
 import com.mohammad.pokescript.databinding.FragmentDetailBinding
 import com.mohammad.pokescript.models.CustomPokemonListItem
@@ -59,6 +62,15 @@ class DetailsFragment : Fragment(R.layout.fragment_detail) {
                 }
             }
         }
+
+        val doubleClick = DoubleClick(object : DoubleClickListener {
+            override fun onSingleClickEvent(view: View?) {}
+            override fun onDoubleClickEvent(view: View?) {
+                findNavController().navigate(R.id.action_detailFragment_to_mapViewFragment)
+            }
+        })
+
+        binding.mapView.setOnClickListener(doubleClick)
     }
 
     private fun setType(type: String) {

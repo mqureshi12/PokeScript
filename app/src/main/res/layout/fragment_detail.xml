@@ -27,17 +27,17 @@
             android:text="Save Pokemon" />
 
         <FrameLayout
+            android:id="@+id/mapView"
             android:layout_width="250dp"
             android:layout_height="250dp"
-            android:id="@+id/mapView"
             android:layout_below="@id/detailFragmentMap"
             android:layout_centerInParent="true"
             android:background="@drawable/map">
 
             <ImageView
+                android:id="@+id/mapViewPlot"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:id="@+id/mapViewPlot"
                 tools:src="@drawable/placeholder" />
 
         </FrameLayout>

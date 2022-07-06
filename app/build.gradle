@@ -69,4 +69,5 @@ dependencies {
     kapt 'androidx.hilt:hilt-compiler:1.0.0-beta01'
     implementation "androidx.work:work-runtime-ktx:$work_version"
     implementation 'com.facebook.android:facebook-login:latest.release'
+    implementation 'com.gitlab.developerdeveloperdeveloper:androidutilslibrary:1.0.0'
 }

@@ -36,7 +36,7 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 * [X] User can log in / log out of the app
 * [X] User can save / delete Pokemon to and from their party with the information stored
 * [X] The app has multiple views
-* [ ] The app uses at least one gesture (e.g. double tap to like, e.g. pinch to scale) 
+* [ ] The app uses at least one gesture (user can double tap the individual Pokemon map to go to the map view and see all Pokemon together with linked locations)
 * [ ] The app incorporates at least one external library to add visual polish
 * [ ] The app uses at least one animation (e.g. fade in / out, e.g. animating a view growing and shrinking)
 
