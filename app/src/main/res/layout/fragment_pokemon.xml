@@ -21,6 +21,16 @@
         android:text="@string/pokescript" />
 
     <ImageView
+        android:id="@+id/pokemonFragmentSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/pokemonFragmentFilter"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="16dp"
+        app:srcCompat="@drawable/ic_settings"
+        android:contentDescription="@string/settings_for_pokemon" />
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/pokemonFragmentFilter"
@@ -65,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:imeOptions="flagNoExtractUi"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/pokemonFragmentSearch">

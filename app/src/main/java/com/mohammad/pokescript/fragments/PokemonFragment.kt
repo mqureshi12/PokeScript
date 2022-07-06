@@ -3,6 +3,8 @@ package com.mohammad.pokescript.fragments
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isEmpty
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -94,6 +96,10 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
             transaction.add(dialog, "Filter-dialog")
             transaction.commit()
         }
+        binding.pokemonFragmentSettings.setOnClickListener {
+            // Setup alert to disable or re-enable background tasks
+            setupAlert()
+        }
     }
 
     private fun setupSearchView() {
@@ -175,5 +181,54 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
 
     private fun filterListByName(name: String) : List<CustomPokemonListItem> {
         return pokemonList.filter{it.name.contains(name)}
+    }
+
+    private fun setupAlert() {
+        val workerStatusPref = context?.getSharedPreferences("worker", AppCompatActivity.MODE_PRIVATE)
+        val workerStatus = workerStatusPref?.getString("worker", "")
+
+        if (workerStatus!! == "cancel") {
+            val builder = AlertDialog.Builder(requireContext(), R.style.MyDialogTheme)
+            builder.setMessage("Re-enable background searching?")
+                .setCancelable(false)
+                .setPositiveButton("Yes") { dialog, id ->
+                    // Disable work manager tasks
+                    val pref = context?.getSharedPreferences("worker", AppCompatActivity.MODE_PRIVATE)
+                    val editor = pref?.edit()
+
+                    editor?.let {
+                        editor.putString("worker", "enabled")
+                        editor.commit()
+                    }
+                    Toast.makeText(requireContext(), "Background tasks enabled", Toast.LENGTH_SHORT).show()
+                }
+                .setNegativeButton("No") { dialog, id ->
+                    // Dismiss the dialog
+                    dialog.dismiss()
+                }
+            val alert = builder.create()
+            alert.show()
+        } else {
+            val builder = AlertDialog.Builder(requireContext(), R.style.MyDialogTheme)
+            builder.setMessage("Disable background pokemon search tasks ?")
+                .setCancelable(false)
+                .setPositiveButton("Yes") { dialog, id ->
+
+                    // Disable work manager tasks
+                    val pref = context?.getSharedPreferences("worker", AppCompatActivity.MODE_PRIVATE)
+                    val editor = pref?.edit()
+                    editor?.let {
+                        editor.putString("worker", "cancel")
+                        editor.commit()
+                    }
+                    Toast.makeText(requireContext(), "Background tasks cancelled", Toast.LENGTH_SHORT).show()
+                }
+                .setNegativeButton("No") { dialog, id ->
+                    // Dismiss the dialog
+                    dialog.dismiss()
+                }
+            val alert = builder.create()
+            alert.show()
+        }
     }
 }
