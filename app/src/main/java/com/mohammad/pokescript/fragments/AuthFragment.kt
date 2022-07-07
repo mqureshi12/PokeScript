@@ -6,12 +6,14 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
 import com.facebook.login.LoginResult
 import com.mohammad.pokescript.R
 import com.mohammad.pokescript.databinding.FragmentAuthBinding
+
 
 class AuthFragment : Fragment(R.layout.fragment_auth) {
 
@@ -23,6 +25,9 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
             binding = FragmentAuthBinding.bind(view)
             callbackManager = CallbackManager.Factory.create()
             binding.loginButton.setReadPermissions(listOf("email", "public_profile"))
+            if(AccessToken.getCurrentAccessToken() != null) {
+                findNavController().navigate(R.id.action_authFragment_to_listFragment)
+            }
             binding.loginButton.registerCallback(callbackManager, object  :FacebookCallback<LoginResult> {
                 override fun onSuccess(result: LoginResult) {
                     findNavController().navigate(R.id.action_authFragment_to_listFragment)
