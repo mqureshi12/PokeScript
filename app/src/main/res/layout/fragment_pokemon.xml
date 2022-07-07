@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pokemon_blue">
+    android:background="@color/pokemon_gray">
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,62 +12,65 @@
         android:id="@+id/pokemonFragmentTitle"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         android:padding="@dimen/padding"
+        android:layout_marginStart="15dp"
         android:fontFamily="@font/pokemon"
         android:textStyle="bold"
-        android:textColor="@color/pokemon_yellow"
-        android:textSize="@dimen/pokemon_title_text_size"
+        android:textColor="@color/white"
+        android:textSize="30sp"
         android:text="@string/pokescript" />
 
     <ImageView
         android:id="@+id/pokemonFragmentSettings"
-        android:layout_width="wrap_content"
+        android:layout_width="31dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/pokemonFragmentFilter"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_margin="16dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginRight="35dp"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonFragmentRefresh"
+        app:layout_constraintTop_toTopOf="@+id/pokemonFragmentTitle"
+        app:layout_constraintRight_toLeftOf="@id/logout_button"
         app:srcCompat="@drawable/ic_settings"
         android:contentDescription="@string/settings_for_pokemon" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/pokemonFragmentFilter"
-        app:layout_constraintTop_toTopOf="@id/pokemonFragmentSearch"
-        app:layout_constraintBottom_toBottomOf="@id/pokemonFragmentSearch"
-        app:layout_constraintLeft_toRightOf="@id/pokemonFragmentSearch"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="16dp"
+        android:layout_width="31dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginRight="65dp"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonFragmentRefresh"
+        app:layout_constraintTop_toTopOf="@+id/pokemonFragmentTitle"
+        app:layout_constraintRight_toLeftOf="@id/logout_button"
         android:src="@drawable/ic_filter"
         android:contentDescription="@string/filter_pokemon_by_type" />
 
     <ProgressBar
+        android:id="@+id/pokemonFragmentProgress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/pokemonFragmentProgress"
-        app:layout_constraintTop_toTopOf="@+id/pokemonFragmentRefresh"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="10dp"
         android:elevation="2dp"
         android:indeterminateDrawable="@drawable/progress"
         android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pokemonFragmentSearch"
         tools:visibility="visible" />
 
     <androidx.appcompat.widget.SearchView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:id="@+id/pokemonFragmentSearch"
         style="@style/SearchViewStyle"
-        app:layout_constraintTop_toBottomOf="@id/pokemonFragmentTitle"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/pokemonFragmentFilter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:imeOptions="flagNoExtractUi"
-        android:queryHint="Charmander"
         android:clickable="true"
         android:focusable="true"
-        app:iconifiedByDefault="false" />
+        android:imeOptions="flagNoExtractUi"
+        android:queryHint="Charmander"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pokemonFragmentTitle" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/pokemonFragmentRefresh"
@@ -111,7 +114,7 @@
         android:layout_marginStart="@dimen/floating_action_btn_margin"
         android:layout_marginTop="@dimen/floating_action_btn_margin"
         android:id="@+id/rippleBackgroundSaved"
-        app:rb_color="@color/pokemon_yellow"
+        app:rb_color="@color/pokemon_blue"
         app:rb_radius="32dp"
         app:rb_rippleAmount="4"
         app:rb_duration="1000"
@@ -125,20 +128,18 @@
             android:src="@drawable/pokeball"
             app:civ_border="false"
             app:civ_shadow="true"
-            app:civ_shadow_color="@color/pokemon_yellow"
+            app:civ_shadow_color="@color/pokemon_blue"
             app:civ_shadow_radius="2dp" />
 
     </com.skyfishjy.library.RippleBackground>
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/logout_button"
-        android:layout_width="100dp"
+        android:layout_width="31dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintEnd_toStartOf="@+id/rippleBackgroundSaved"
-        app:layout_constraintStart_toEndOf="@+id/rippleBackgroundMap" />
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonFragmentRefresh"
+        app:layout_constraintTop_toTopOf="@+id/pokemonFragmentTitle" />
 
     <com.skyfishjy.library.RippleBackground
         android:layout_width="100dp"
@@ -146,7 +147,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:id="@+id/rippleBackgroundMap"
-        app:rb_color="@color/pokemon_yellow"
+        app:rb_color="@color/pokemon_blue"
         android:shape="oval"
         app:rb_radius="32dp"
         app:rb_rippleAmount="4"

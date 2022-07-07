@@ -1,4 +1,4 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/pokemon_blue_dark"/>
+    <item android:drawable="@color/pokemon_gray"/>
     <item android:drawable="@drawable/ic_splash" android:gravity="center"/>
 </layer-list>

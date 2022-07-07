@@ -13,5 +13,5 @@
     <solid android:color="@color/pokemon_card_color_dark" />
     <stroke
         android:width="3dp"
-        android:color="@color/pokemon_red" />
+        android:color="@color/pokemon_blue" />
 </shape>

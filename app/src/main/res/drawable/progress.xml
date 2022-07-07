@@ -12,7 +12,7 @@
         <gradient
             android:angle="0"
             android:endColor="#00ffffff"
-            android:startColor="@color/pokemon_yellow"
+            android:startColor="@color/pokemon_blue"
             android:type="sweep"
             android:useLevel="false" />
         <size
