@@ -1,6 +1,7 @@
 package com.mohammad.pokescript.fragments
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -20,6 +21,7 @@ import com.mohammad.pokescript.models.CustomPokemonListItem
 import com.mohammad.pokescript.utilities.Resource
 import com.mohammad.pokescript.viewmodels.PokemonViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.collections.ArrayList
 
 @AndroidEntryPoint
 class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.FilterListener {
@@ -45,7 +47,13 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
             findNavController().navigate(R.id.action_listFragment_to_mapViewFragment)
         }
         binding.pokemonFragmentSavedFAB.setOnClickListener {
-            findNavController().navigate(R.id.action_listFragment_to_savedViewFragment)
+            val rippleBackground = binding.rippleBackground
+            rippleBackground.startRippleAnimation()
+            Handler().postDelayed({
+                findNavController().navigate(R.id.action_listFragment_to_savedViewFragment)
+                rippleBackground.stopRippleAnimation()
+            }, 250)
+
         }
         binding.logoutButton.setOnClickListener {
             findNavController().navigate(R.id.action_listFragment_to_authFragment)

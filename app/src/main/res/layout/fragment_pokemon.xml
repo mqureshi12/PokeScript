@@ -104,18 +104,33 @@
         tools:visibility="visible"
         android:visibility="gone"/>
 
-    <com.mikhaellopez.circularimageview.CircularImageView
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:id="@+id/pokemonFragmentSavedFAB"
+    <com.skyfishjy.library.RippleBackground
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_margin="@dimen/floating_action_btn_margin"
-        app:civ_shadow="true"
-        app:civ_shadow_color="@color/pokemon_yellow"
-        app:civ_shadow_radius="2dp"
-        app:civ_border="false"
-        android:src="@drawable/pokeball" />
+        android:layout_marginStart="@dimen/floating_action_btn_margin"
+        android:layout_marginTop="@dimen/floating_action_btn_margin"
+        android:id="@+id/rippleBackground"
+        app:rb_color="@color/pokemon_yellow"
+        android:shape="oval"
+        app:rb_radius="32dp"
+        app:rb_rippleAmount="4"
+        app:rb_duration="1000"
+        app:rb_scale="6">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/pokemonFragmentSavedFAB"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/pokeball"
+            app:civ_border="false"
+            app:civ_shadow="true"
+            app:civ_shadow_color="@color/pokemon_yellow"
+            app:civ_shadow_radius="2dp" />
+
+    </com.skyfishjy.library.RippleBackground>
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/logout_button"
@@ -124,8 +139,7 @@
         android:layout_gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="38dp"
-        app:layout_constraintStart_toEndOf="@id/pokemonFragmentMapFAB"
-        app:layout_constraintEnd_toStartOf="@id/pokemonFragmentSavedFAB" />
+        app:layout_constraintStart_toEndOf="@id/pokemonFragmentMapFAB" />
 
     <ImageView
         android:layout_width="56dp"
