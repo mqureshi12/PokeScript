@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pokemon_blue">
+    android:background="@color/pokemon_gray">
 
     <ImageView
         android:layout_width="30dp"
@@ -37,7 +37,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:padding="@dimen/padding"
         android:fontFamily="@font/pokemon"
-        android:textColor="@color/pokemon_yellow"
+        android:textColor="@color/pokemon_blue"
         android:textSize="@dimen/pokemon_fragment_title_size"
         android:textStyle="bold"
         android:text="@string/saved_pokemon" />
@@ -65,8 +65,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
         android:visibility="invisible"
-        android:textColor="@color/pokemon_yellow"
-        android:textSize="@dimen/pokemon_title_text_size"
+        android:textColor="@color/pokemon_blue"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:text="@string/your_saved_pokemon_will_be_here_in_your_party" />
 

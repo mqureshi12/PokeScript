@@ -17,7 +17,7 @@
         android:fontFamily="@font/pokemon"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="@dimen/pokemon_fragment_title_size"
         android:text="@string/pokescript" />
 
     <ImageView
