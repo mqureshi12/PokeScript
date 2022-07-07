@@ -58,7 +58,6 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
                 findNavController().navigate(R.id.action_listFragment_to_savedViewFragment)
                 rippleBackground.stopRippleAnimation()
             }, 250)
-
         }
         binding.logoutButton.setOnClickListener {
             binding.pokemonFragmentProgress.visibility = View.VISIBLE
