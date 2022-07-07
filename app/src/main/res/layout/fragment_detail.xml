@@ -6,7 +6,7 @@
     android:id="@+id/parent"
     android:padding="16dp"
     android:scrollbars="none"
-    android:background="@color/pokemon_blue">
+    android:background="@color/pokemon_gray">
 
     <RelativeLayout
         android:layout_width="match_parent"
