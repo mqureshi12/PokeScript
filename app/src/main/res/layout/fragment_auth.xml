@@ -25,9 +25,10 @@
         android:layout_gravity="center_horizontal"
         app:layout_constraintBottom_toTopOf="@+id/login_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159"
+        app:layout_constraintVertical_bias="0.429"
         app:srcCompat="@drawable/pokeball" />
 
     <TextView
@@ -44,7 +45,7 @@
         android:id="@+id/authTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login or Sign Up Below to get started with PokeScript"
+        android:text="@string/login_or_sign_up_below_to_get_started"
         android:textAlignment="center"
         android:textStyle="bold"
         android:paddingBottom="20dp"
