@@ -44,10 +44,15 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
 
     private fun setupFABs() {
         binding.pokemonFragmentMapFAB.setOnClickListener {
-            findNavController().navigate(R.id.action_listFragment_to_mapViewFragment)
+                val rippleBackground = binding.rippleBackgroundMap
+                rippleBackground.startRippleAnimation()
+                Handler().postDelayed({
+                    findNavController().navigate(R.id.action_listFragment_to_mapViewFragment)
+                    rippleBackground.stopRippleAnimation()
+                }, 250)
         }
         binding.pokemonFragmentSavedFAB.setOnClickListener {
-            val rippleBackground = binding.rippleBackground
+            val rippleBackground = binding.rippleBackgroundSaved
             rippleBackground.startRippleAnimation()
             Handler().postDelayed({
                 findNavController().navigate(R.id.action_listFragment_to_savedViewFragment)
