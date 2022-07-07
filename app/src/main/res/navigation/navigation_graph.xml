@@ -17,13 +17,25 @@
         android:label="ListFragment" >
         <action
             android:id="@+id/action_listFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out" />
         <action
             android:id="@+id/action_listFragment_to_mapViewFragment"
-            app:destination="@id/mapViewFragment" />
+            app:destination="@id/mapViewFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
         <action
             android:id="@+id/action_listFragment_to_savedViewFragment"
-            app:destination="@id/savedViewFragment" />
+            app:destination="@id/savedViewFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
         <action
             android:id="@+id/action_listFragment_to_authFragment"
             app:destination="@id/authFragment" />
