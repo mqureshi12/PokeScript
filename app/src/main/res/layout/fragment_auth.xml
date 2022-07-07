@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.AuthFragment">
+    tools:context=".fragments.AuthFragment"
+    android:background="@drawable/gradient_background">
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
@@ -13,22 +14,40 @@
         android:layout_gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.598" />
+        app:layout_constraintVertical_bias="0.679" />
 
     <ImageView
         android:id="@+id/imgAvatar"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="4dp"
         app:layout_constraintBottom_toTopOf="@+id/login_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pokeball">
-    </ImageView>
+        app:layout_constraintVertical_bias="0.159"
+        app:srcCompat="@drawable/pokeball" />
+
+    <TextView
+        android:id="@+id/authTitleTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pokemon"
+        android:text="@string/pokescript"
+        android:textAlignment="center"
+        android:textSize="@dimen/pokemon_fragment_title_size"
+        app:layout_constraintTop_toBottomOf="@+id/imgAvatar" />
+
+    <TextView
+        android:id="@+id/authTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login or Sign Up Below to get started with PokeScript"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/login_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
