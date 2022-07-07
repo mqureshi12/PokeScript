@@ -44,12 +44,12 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
 
     private fun setupFABs() {
         binding.pokemonFragmentMapFAB.setOnClickListener {
-                val rippleBackground = binding.rippleBackgroundMap
-                rippleBackground.startRippleAnimation()
-                Handler().postDelayed({
-                    findNavController().navigate(R.id.action_listFragment_to_mapViewFragment)
-                    rippleBackground.stopRippleAnimation()
-                }, 250)
+            val rippleBackground = binding.rippleBackgroundMap
+            rippleBackground.startRippleAnimation()
+            Handler().postDelayed({
+                findNavController().navigate(R.id.action_listFragment_to_mapViewFragment)
+                rippleBackground.stopRippleAnimation()
+            }, 250)
         }
         binding.pokemonFragmentSavedFAB.setOnClickListener {
             val rippleBackground = binding.rippleBackgroundSaved
@@ -61,7 +61,10 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
 
         }
         binding.logoutButton.setOnClickListener {
-            findNavController().navigate(R.id.action_listFragment_to_authFragment)
+            binding.pokemonFragmentProgress.visibility = View.VISIBLE
+            Handler().postDelayed({
+                findNavController().navigate(R.id.action_listFragment_to_authFragment)
+            }, 3200)
         }
     }
 
