@@ -30,15 +30,16 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 * [X] User can scroll through a list of Pokemon from the Pokemon API
 * [X] Users can search for a specific Pokemon by name
 * [X] User can click on a Pokemon in the list view to see more details
-  * [X] Statistics, class rating (calculated by getting the average of all statistics), abilities, type, and location
+  * Statistics, class rating (calculated by getting the average of all statistics), abilities, type, and location
 * [X] User can access a game-based map from the main view with Pokemon plotted onto certain, different parts of the map 
 * [X] User can sign up with a new profile
 * [X] User can log in / log out of the app
 * [X] User can save / delete Pokemon to and from their party with the information stored
 * [X] The app has multiple views
 * [X] The app uses at least one gesture (user can double tap the individual Pokemon map in the details fragment to go to the map view and see all Pokemon together with linked locations)
-* [ ] The app incorporates at least one external library to add visual polish
-* [ ] The app uses at least one animation (e.g. fade in / out, e.g. animating a view growing and shrinking)
+* [X] The app incorporates at least one external library to add visual polish
+  * [Android Ripple Background](https://github.com/skyfishjy/android-ripple-background), [CircularImageView](https://github.com/lopspower/CircularImageView)
+* [X] The app uses at least one animation (e.g. fade in / out, e.g. animating a view growing and shrinking)
 
 **Optional Nice-to-have Stories**
 
