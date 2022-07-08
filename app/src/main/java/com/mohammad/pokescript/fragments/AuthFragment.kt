@@ -14,7 +14,6 @@ import com.facebook.login.LoginResult
 import com.mohammad.pokescript.R
 import com.mohammad.pokescript.databinding.FragmentAuthBinding
 
-
 class AuthFragment : Fragment(R.layout.fragment_auth) {
 
         lateinit var binding: FragmentAuthBinding
