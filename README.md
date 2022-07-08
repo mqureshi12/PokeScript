@@ -19,7 +19,7 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 - **Story:** Gamers and Pokemon fans are given a chance to improve their knowledge in the area and gain access to useful in-game Pokemon information quickly, in a fun way. As the app fetches Pokemon from the API, it can also be used to quickly see new Pokemon announced when a new game is releasing assuming the API is updated with information in a timely manner.
 - **Market:** Users include gamers and Pokemon fans who need to get quick information while playing a Pokemon game or planning out their party. Other applications for this exists, but many are bloated with too much information or views and are designed poorly without the user or UI/UX in mind.
 - **Habit:** They may use this app many days in a row, for short bursts, perhaps weeks at time while playing a game, followed by a pause.
-- **Scope:** A functioning app will be manageable to complete. Challenges may arise when attempting to implement the planned periodic background searches to the API while the app is not open and 3rd party sign on. If all stories and other stretch goals are met, the most difficult final story would be to implement the Augmented Reality stretch goal, strongly increasing the scope of the project. Utilizing new topics, technologies and processes like Kotlin, MVVM, dependency injection, and coroutines will also increase the complexity and difficulty in reaching the app plans.
+- **Scope:** A functioning app will be manageable to complete. Challenges may arise when attempting to implement 3rd party sign on and the planned periodic background searches to the API while the app is not open, with that goal specifically greatly increasing the scope of the app. Utilizing planned new topics, technologies and processes like Kotlin, the Facebook Login SDK, MVVM, dependency injection, and coroutines will also increase the complexity and difficulty in reaching the app plans.
 
 ## Product Spec
 
@@ -55,29 +55,40 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Login / Sign Up
+* Pokemon List
+* Pokemon Details
+* Type Dialog
+* Map
+* Saved Pokemon
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Pokemon List
+* Pokemon Map
+* Saved Pokemon
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Login
+   * Pokemon List
+* Pokemon List
+  * Pokemon Details
+  * Type Dialog
+  * Map
+  * Saved Pokemon
+* Pokemon Details
+  * Pokemon List
+  * Map
+* Type Dialog
+  * Pokemon List
+* Map
+  * Pokemon List
+* Saved Pokemon
+  * Pokemon List
+  * Pokemon Details
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
@@ -87,9 +98,39 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 
 ## Schema 
 ### Models
-[Still being worked on; will update throughout the development process]
+
+**Custom Pokemon List Item**
+| Property      | Type     | Description                                         |
+| ------------- | -------- | --------------------------------------------------- |
+| id            | Int?     | unique id for Pokemon in the db                     |
+| api           | Int      | id for api used to query the api                    |
+| image         | String?  | Pokemon image                                       |
+| name          | String   | Pokemon name                                        |
+| type          | String   | main Pokemon type                                   |
+| positionLeft  | Int?     | left position of where a Pokemon is on the map      |
+| positionTop   | Int?     | top position of where a Pokemon is on the map       |
+| isSaved       | String   | whether or not a Pokemon is saved to a user's party |
+
+**Pokemon Detail Item**
+| Property      | Type                  | Description                                         |
+| ------------- | --------------------- | --------------------------------------------------- |
+| id            | Int                   | unique id for Pokemon in the db                     |
+| sprites       | Sprites               | Pokemon sprite                                      |
+| name          | String                | Pokemon name                                        |
+| timestamp     | String?               | Pokemon access time needed to invalidate cache      |                           
+| abilities     | List<PokemonAbility>  | Pokemon abilities                                   |
+| stats         | List<PokemonStat>     | Pokemon stats                                       |
+| types         | List<PokemonType>     | All Pokemon types of a specific Pokemon             |
    
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+- ```kotlin
+  @GET("/api/v2/pokemon/{id}")
+  suspend fun getPokemonDetails(@Path("id") id: Int) : Response<PokemonDetailItem>
+  ```
+- ```kotlin
+  callbackManager = CallbackManager.Factory.create()
+  binding.loginButton.setReadPermissions(listOf("email", "public_profile"))
+  if(AccessToken.getCurrentAccessToken() != null) {
+     findNavController().navigate(R.id.action_authFragment_to_listFragment)
+  }
+  ```
