@@ -31,6 +31,7 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
     private var pokemonList = mutableListOf<CustomPokemonListItem>()
     private lateinit var binding: FragmentPokemonBinding
     private val viewModel: PokemonViewModel by viewModels()
+    private val rippleDelay: Long = 250
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -49,7 +50,7 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
             Handler().postDelayed({
                 findNavController().navigate(R.id.action_listFragment_to_mapViewFragment)
                 rippleBackground.stopRippleAnimation()
-            }, 250)
+            }, rippleDelay)
         }
         binding.pokemonFragmentSavedFAB.setOnClickListener {
             val rippleBackground = binding.rippleBackgroundSaved
@@ -57,7 +58,7 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
             Handler().postDelayed({
                 findNavController().navigate(R.id.action_listFragment_to_savedViewFragment)
                 rippleBackground.stopRippleAnimation()
-            }, 250)
+            }, rippleDelay)
         }
         binding.logoutButton.setOnClickListener {
             binding.pokemonFragmentProgress.visibility = View.VISIBLE
