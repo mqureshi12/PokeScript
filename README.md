@@ -50,6 +50,7 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 * [X] User can pull down to refresh the list of Pokemon gathered from the API
 * [X] Sign up and log in can be done with a Facebook account
 * [X] Display a default placeholder graphic for each image during loading
+* [ ] Use a custom app icon
 * [X] Apply the View Binding library to reduce view boilerplate
 * [X] Show progress bar loading icon when loading in key areas throughout the app
 
