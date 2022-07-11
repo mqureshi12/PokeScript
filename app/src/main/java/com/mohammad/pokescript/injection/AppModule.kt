@@ -1,7 +1,6 @@
 package com.mohammad.pokescript.injection
 
 import android.content.Context
-import com.google.gson.Gson
 import com.mohammad.pokescript.api.ApiInterface
 import com.mohammad.pokescript.database.PokemonDB
 import com.mohammad.pokescript.database.PokemonDao
