@@ -51,6 +51,7 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 * [X] Sign up and log in can be done with a Facebook account
 * [X] Display a default placeholder graphic for each image during loading
 * [ ] Use a custom app icon
+* [ ] Implement text localization for automatic translation depending on the user's device-language
 * [X] Apply the View Binding library to reduce view boilerplate
 * [X] Show progress bar loading icon when loading in key areas throughout the app
 
