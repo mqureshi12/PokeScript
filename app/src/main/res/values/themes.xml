@@ -28,8 +28,8 @@
     </style>
     <!-- Custom splash theme -->
     <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor">@color/pokemon_blue</item>
         <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:statusBarColor">@color/pokemon_gray</item>
     </style>
     <!--- Dialog Theme -->
     <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
