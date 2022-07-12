@@ -1,5 +1,6 @@
 package com.mohammad.pokescript.fragments
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
@@ -32,6 +33,7 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
     private lateinit var binding: FragmentPokemonBinding
     private val viewModel: PokemonViewModel by viewModels()
     private val rippleDelay: Long = 250
+    private lateinit var mediaPlayer: MediaPlayer
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -46,18 +48,24 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
     private fun setupFABs() {
         binding.pokemonFragmentMapFAB.setOnClickListener {
             val rippleBackground = binding.rippleBackgroundMap
+            mediaPlayer = MediaPlayer.create(requireContext(), R.raw.sound_map)
             rippleBackground.startRippleAnimation()
+            mediaPlayer.start()
             Handler().postDelayed({
                 findNavController().navigate(R.id.action_listFragment_to_mapViewFragment)
                 rippleBackground.stopRippleAnimation()
+                mediaPlayer.seekTo(0)
             }, rippleDelay)
         }
         binding.pokemonFragmentSavedFAB.setOnClickListener {
             val rippleBackground = binding.rippleBackgroundSaved
+            mediaPlayer = MediaPlayer.create(requireContext(), R.raw.sound_saved)
             rippleBackground.startRippleAnimation()
+            mediaPlayer.start()
             Handler().postDelayed({
                 findNavController().navigate(R.id.action_listFragment_to_savedViewFragment)
                 rippleBackground.stopRippleAnimation()
+                mediaPlayer.seekTo(0)
             }, rippleDelay)
         }
         binding.logoutButton.setOnClickListener {
@@ -240,5 +248,13 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
             val alert = builder.create()
             alert.show()
         }
+    }
+
+    override fun onDestroy() {
+        if (this::mediaPlayer.isInitialized) {
+            mediaPlayer.stop()
+            mediaPlayer.release()
+        }
+        super.onDestroy()
     }
 }
