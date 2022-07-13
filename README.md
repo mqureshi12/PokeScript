@@ -45,13 +45,12 @@ To go beyond CodePath and increase complexity, I have learned and utilized advan
 * [X] User can filter Pokemon by type
 * [X] The app periodically searches the Pokemon API in the background to find new Pokemon and add them to the internal database even while the app is not open
 * [X] User can enable / disable the background api search in the app
-* [ ] Different audio plays when navigating to certain fragments
+* [X] Different audio plays when navigating to certain fragments
 * [X] The app checks for needed device internet connectivity
 * [X] User can pull down to refresh the list of Pokemon gathered from the API
 * [X] Sign up and log in can be done with a Facebook account
 * [X] Display a default placeholder graphic for each image during loading
 * [X] Use a custom app icon and splash screen
-* [ ] Implement text localization for automatic translation depending on the user's device-language
 * [X] Apply the View Binding library to reduce view boilerplate
 * [X] Show progress bar loading icon when loading in key areas throughout the app
 

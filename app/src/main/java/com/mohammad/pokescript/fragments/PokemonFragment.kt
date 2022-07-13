@@ -32,7 +32,7 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
     private var pokemonList = mutableListOf<CustomPokemonListItem>()
     private lateinit var binding: FragmentPokemonBinding
     private val viewModel: PokemonViewModel by viewModels()
-    private val rippleDelay: Long = 250
+    private val delay: Long = 250
     private lateinit var mediaPlayer: MediaPlayer
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -48,25 +48,23 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
     private fun setupFABs() {
         binding.pokemonFragmentMapFAB.setOnClickListener {
             val rippleBackground = binding.rippleBackgroundMap
-            mediaPlayer = MediaPlayer.create(requireContext(), R.raw.sound_map)
+            mediaPlayer = MediaPlayer.create(requireContext(), R.raw.sound_map_click)
             rippleBackground.startRippleAnimation()
             mediaPlayer.start()
             Handler().postDelayed({
                 findNavController().navigate(R.id.action_listFragment_to_mapViewFragment)
                 rippleBackground.stopRippleAnimation()
-                mediaPlayer.seekTo(0)
-            }, rippleDelay)
+            }, delay)
         }
         binding.pokemonFragmentSavedFAB.setOnClickListener {
             val rippleBackground = binding.rippleBackgroundSaved
-            mediaPlayer = MediaPlayer.create(requireContext(), R.raw.sound_saved)
+            mediaPlayer = MediaPlayer.create(requireContext(), R.raw.sound_saved_click)
             rippleBackground.startRippleAnimation()
             mediaPlayer.start()
             Handler().postDelayed({
                 findNavController().navigate(R.id.action_listFragment_to_savedViewFragment)
                 rippleBackground.stopRippleAnimation()
-                mediaPlayer.seekTo(0)
-            }, rippleDelay)
+            }, delay)
         }
         binding.logoutButton.setOnClickListener {
             binding.pokemonFragmentProgress.visibility = View.VISIBLE
@@ -83,6 +81,8 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
             override fun onClick(item: CustomPokemonListItem) {
                 val bundle = Bundle()
                 bundle.putParcelable("pokemon", item)
+                mediaPlayer = MediaPlayer.create(requireContext(), R.raw.sound_detail_click)
+                mediaPlayer.start()
                 findNavController().navigate(R.id.action_listFragment_to_detailFragment, bundle)
             }
         })
@@ -251,7 +251,7 @@ class PokemonFragment : Fragment(R.layout.fragment_pokemon), FilterDialog.Filter
     }
 
     override fun onDestroy() {
-        if (this::mediaPlayer.isInitialized) {
+        if(this::mediaPlayer.isInitialized) {
             mediaPlayer.stop()
             mediaPlayer.release()
         }
