@@ -2,7 +2,6 @@ package com.mohammad.pokescript.utilities
 
 import android.content.Context
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import androidx.hilt.work.HiltWorker
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
@@ -30,15 +29,6 @@ class BackgroundWorker @AssistedInject constructor(
 
             // Get id of last pokemon in local db
             val lastStoredPokemonObject = repository.getLastStored()
-
-            // Implement hard stop at 100 pokemon
-            if (lastStoredPokemonObject.id!! >= 100) {
-                val pref = context.getSharedPreferences("worker", AppCompatActivity.MODE_PRIVATE)
-                val editor = pref.edit()
-                editor.putString("worker", "cancel")
-                editor.commit()
-                return@withContext Result.success()
-            }
 
             // Check API for details on next pokemon
             val nextPokemon = lastStoredPokemonObject.apiId + 1
