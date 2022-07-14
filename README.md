@@ -8,9 +8,19 @@
 
 ## Overview
 ### Description
-PokeScript is an Android app that allows users to search through a list of Pokemon (creatures from the popular gaming and film / TV franchise of the same name) and view their statistics, class rating, abilities, type and location. It also allows users to save Pokemon into their personal party to mimic their in-game roster.
+PokeScript is an Android app that allows users to search through a list of Pokemon (creatures from the popular gaming and film / TV franchise of the same name) and view their statistics, class rating, abilities, type and location. Users can also save Pokemon into their personal party to mimic their in-game roster and the app intelligently plots Pokemon onto a map once they are added to the database.
 
-To go beyond CodePath and increase complexity, I have learned and utilized advanced topics, processes, and technologies like Kotlin, the MVVM architecture style, dependency injection, coroutines, pagination and more. I have also used utilized layout types not used in the course curriculum and developed some xml files on my own as well as a custom app icon.
+To go beyond CodePath and increase complexity, I have learned and utilized advanced topics, processes, and technologies like Kotlin, the MVVM architecture style, dependency injection, coroutines, pagination and more. I have also used utilized layout types not used in the course curriculum and developed some xml files on my own as well as a custom app icon. I went through code reviews with my manager and peer, and worked to follow industry standards, focused on code quality, and created a workflow used by Meta (Facebook) engineers.
+
+Technical Breakdown:
+- PokeScript follows the [MVVM](https://miro.medium.com/max/1400/0*vnWgSTVC8qoJdusd.png) architecture pattern.
+- The app retrieves data from two sources. First the Poke API and then the internal database using Room + SQLite.
+- PokeScript then decides based on a cache value, whether to retrieve results from the API or to return the items that are already stored in the database.
+- The two data sources are queried using the Repository which acts as a hub for the data retrieval.
+- Once data is retrieved, it is returned to the View Model which posts the data to LiveData objects which are observed in UI.
+- The data will be wrapped in a resource class to show whether the result is in a Successful, Loading, or Error state. The UI will then react accordingly.
+- PokeScript uses a single activity which hosts fragments to show the various views; the navigation is handled through navigation component.
+- Also, I decided to implement work manager to create a periodic task to run every 15 minutes to search for the next Pokemon from the API. If one is found then a custom object will be created and stored in Room to then be shown in the list view.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
