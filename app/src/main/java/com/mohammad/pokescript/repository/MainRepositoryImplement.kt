@@ -21,45 +21,20 @@ class MainRepositoryImplement @Inject constructor (
     private val fiveAgo = System.currentTimeMillis() - Constants.CACHE
 
     override suspend fun getPokemonList(): Resource<List<CustomPokemonListItem>> {
+        // Check for results from DB
         val responseFromDB = pokeDao.getPokemon()
-
-        if(responseFromDB.isNotEmpty()) {
+        if (responseFromDB.isNotEmpty()) {
             return Resource.Success(responseFromDB)
         } else {
-            // Otherwise fetch the first ten pokemon and add to the list
-            val preSeedList = mutableListOf<CustomPokemonListItem>()
-            for (i in 1..10){
-                // i is ID
-                when (val apiResult = getPokemonDetails(i)) {
-                    is Resource.Success -> {
-                        if (apiResult.data != null) {
-                            // Cast as new pokemon
-                            apiResult.data.let { newPokemon ->
-                                // Create custom pokemon object save in DB
-                                val newPokemonObj = CustomPokemonListItem(
-                                    name = newPokemon.name,
-                                    Image = newPokemon.sprites.front_default,
-                                    type = newPokemon.types?.get(0)?.type?.name.toString(),
-                                    // Set positions for map
-                                    positionLeft = (0..1500).random(), // Random position of pokemon
-                                    positionTop = (0..1500).random(), // Random position of pokemon
-                                    apiId = newPokemon.id
-                                )
-                                preSeedList.add(newPokemonObj)
-                            }
-                        } else {
-                            return Resource.Error("Unable to retrieve next items")
-                        }
-                    }
-                    else -> return Resource.Error("Unable to retrieve next items")
-                }
-            }
+            // If return null then preSeed from Constants
+            val preSeedList = Constants.preSeedDB()
             // Insert into DB
             pokeDao.insertPokemonList(preSeedList)
             // Read from DB
             val initialDBRead = pokeDao.getPokemon()
             // Return from DB
             return Resource.Success(initialDBRead)
+
         }
     }
 
@@ -96,7 +71,11 @@ class MainRepositoryImplement @Inject constructor (
                 else -> return Resource.Error("Unable to retrieve next items")
             }
         }
-        pokeDao.insertPokemonList(pokemonList)
+
+        // Insert list into DB
+        if (pokemonList.isNotEmpty()){
+            pokeDao.insertPokemonList(pokemonList)
+        }
 
         return Resource.Success(pokemonList)
     }
