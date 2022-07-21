@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="pokemon_card_color">#B78B43</color>
-    <color name="pokemon_card_color_dark">#765b41</color>
+    <color name="pokemon_card_color">#969696</color>
+    <color name="pokemon_card_color_dark">#2C2C2C</color>
     <color name="pokemon_card_save_btn">#d1a3a4</color>
     <color name="pokemon_red">#CC0000</color>
     <color name="pokemon_blue">#1778F2</color>
